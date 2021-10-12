@@ -1,5 +1,6 @@
 package xyz.aquacode.skyblock.main;
 
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MainSB extends JavaPlugin
@@ -21,7 +22,7 @@ public class MainSB extends JavaPlugin
 
     public static void ConsoleLog(Player player, String msg)
     {
-
+        player.sendMessage(msg);
     }
 }
 
