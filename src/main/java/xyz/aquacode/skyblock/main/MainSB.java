@@ -20,7 +20,8 @@ public class MainSB extends JavaPlugin
         // Disable
     }
 
-    public static void ConsoleLog(Player player, String msg) {
+    public static void ConsoleLog(Player player, String msg)
+    {
         player.sendMessage(msg);
     }
 }
