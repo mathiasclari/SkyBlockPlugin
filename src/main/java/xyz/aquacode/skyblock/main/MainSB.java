@@ -8,7 +8,6 @@ public class MainSB extends JavaPlugin
     public void onEnable()
     {
         // Enbale
-
     }
 
     @Override
@@ -17,3 +16,4 @@ public class MainSB extends JavaPlugin
         // Disable
     }
 }
+
