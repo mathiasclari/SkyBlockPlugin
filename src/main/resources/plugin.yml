@@ -1,0 +1,4 @@
+name: AquaSkyBlock
+version: '${project.version}'
+main: xyz.aquacode.skyblock.main.MainSB
+api-version: 1.17
