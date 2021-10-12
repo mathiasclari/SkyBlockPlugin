@@ -24,5 +24,6 @@ public class MainSB extends JavaPlugin
     {
         player.sendMessage(msg);
     }
+
 }
 
