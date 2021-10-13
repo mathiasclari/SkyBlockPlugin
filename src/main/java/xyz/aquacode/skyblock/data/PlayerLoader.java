@@ -17,7 +17,9 @@ public class PlayerLoader implements Listener
         if(!MainSB.PlayerSaves.containsKey(event.getPlayer().getUniqueId())) {
             MainSB.PlayerSaves.put(event.getPlayer().getUniqueId(), new PlayerData());
             PlayerData pData = MainSB.PlayerSaves.get(event.getPlayer().getUniqueId());
+            MainSB.PlayerMessager(event.getPlayer(), "Loading you data.");
             pData.getData(event.getPlayer().getUniqueId());
+            MainSB.PlayerMessager(event.getPlayer(), "Data loaded");
         }
     }
 }

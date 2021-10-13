@@ -22,6 +22,7 @@ public class IslandLoader
             while(result.next())
             {
                 String IslandUUID = result.getString("");
+                MainSB.ConsoleLog("Loading {"+IslandUUID+"}");
                 String IslandWorld = result.getString("");
                 String adminUUID = result.getString("");
                 List<UUID> IslandMembers = new ArrayList<>();
@@ -34,6 +35,7 @@ public class IslandLoader
                 }
 
                 MainSB.IslandSaves.put(UUID.fromString(IslandUUID), new IslandData(UUID.fromString(IslandUUID) ,IslandWorld, UUID.fromString(adminUUID), IslandMembers, IslandSize));
+                MainSB.ConsoleLog("Done {"+IslandUUID+"}");
             }
         }
         catch (SQLException e)
