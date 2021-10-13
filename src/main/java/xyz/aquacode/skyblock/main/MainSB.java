@@ -38,10 +38,14 @@ public class MainSB extends JavaPlugin
         // Disable
     }
 
-    public static void ConsoleLog(Player player, String msg)
+    public static void ConsoleLog(String msg)
     {
-        player.sendMessage(msg);
+        Bukkit.getConsoleSender().sendMessage(msg);
     }
 
+    public static void PlayerMessager(Player user, String msg)
+    {
+        user.sendMessage(msg);
+    }
 }
 
