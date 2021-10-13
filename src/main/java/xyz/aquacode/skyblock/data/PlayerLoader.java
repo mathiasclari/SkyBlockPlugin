@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class PlayerLoeader implements Listener
+public class PlayerLoader implements Listener
 {
     @EventHandler
     public void playerLogin(PlayerLoginEvent event)
