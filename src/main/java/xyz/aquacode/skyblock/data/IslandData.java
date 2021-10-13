@@ -11,14 +11,16 @@ public class IslandData
     // Island Data
     private String islandUUID;
     private String worldName;
+    private UUID islandAdmin;
     private List<UUID> islandMembers = new ArrayList<>();
     private int islandSize;
 
     // Island Save Data
-    public IslandData(String isUUID, String isWorld, List<UUID> isMembers, int isSize)
+    public IslandData(String isUUID, String isWorld, UUID admin, List<UUID> isMembers, int isSize)
     {
         this.islandUUID = isUUID;
         this.worldName = isWorld;
+        this.islandAdmin = admin;
         this.islandMembers = isMembers;
         this.islandSize = isSize;
     }

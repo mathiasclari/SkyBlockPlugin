@@ -2,6 +2,7 @@ package xyz.aquacode.skyblock.main;
 
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import xyz.aquacode.skyblock.IslandManamger.IslandLoader;
 import xyz.aquacode.skyblock.data.IslandData;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class MainSB extends JavaPlugin
     {
         plugin = this;
         dataBase = new MySql("", "", "", "");
+        IslandLoader.LoadIslandFromDataBase();
     }
 
     @Override
