@@ -9,14 +9,14 @@ import java.util.UUID;
 public class IslandData
 {
     // Island Data
-    private String islandUUID;
+    private UUID islandUUID;
     private String worldName;
     private UUID islandAdmin;
     private List<UUID> islandMembers = new ArrayList<>();
     private int islandSize;
 
     // Island Save Data
-    public IslandData(String isUUID, String isWorld, UUID admin, List<UUID> isMembers, int isSize)
+    public IslandData(UUID isUUID, String isWorld, UUID admin, List<UUID> isMembers, int isSize)
     {
         this.islandUUID = isUUID;
         this.worldName = isWorld;
@@ -26,7 +26,7 @@ public class IslandData
     }
 
     // Island Get Data
-    public String getIslandUUID()
+    public UUID getIslandUUID()
     {
         return islandUUID;
     }
@@ -34,6 +34,11 @@ public class IslandData
     public String getIslandWord()
     {
         return worldName;
+    }
+
+    public UUID getIslandAdmin()
+    {
+        return islandAdmin;
     }
 
     public List<UUID> getIslandMembers()
@@ -50,6 +55,11 @@ public class IslandData
     public void setIslandWorld(String wn)
     {
       this.worldName = wn;
+    }
+
+    public void setIslandAdmin(UUID uuid)
+    {
+        this.islandAdmin = uuid;
     }
 
     public void setIslandSize(int iss)

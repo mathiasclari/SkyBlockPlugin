@@ -33,7 +33,7 @@ public class IslandLoader
                     IslandMembers.add(UUID.fromString(result2.getString("")));
                 }
 
-                MainSB.IslandSaves.put(UUID.fromString(IslandUUID), new IslandData(IslandUUID ,IslandWorld, UUID.fromString(adminUUID), IslandMembers, IslandSize));
+                MainSB.IslandSaves.put(UUID.fromString(IslandUUID), new IslandData(UUID.fromString(IslandUUID) ,IslandWorld, UUID.fromString(adminUUID), IslandMembers, IslandSize));
             }
         }
         catch (SQLException e)
