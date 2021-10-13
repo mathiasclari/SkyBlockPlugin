@@ -7,7 +7,6 @@ import xyz.aquacode.skyblock.IslandManamger.IslandLoader;
 import xyz.aquacode.skyblock.data.IslandData;
 import xyz.aquacode.skyblock.data.PlayerData;
 import xyz.aquacode.skyblock.data.PlayerLoader;
-import xyz.aquacode.skyblock.data.PlayerLoeader;
 
 import java.util.HashMap;
 import java.util.HashSet;
