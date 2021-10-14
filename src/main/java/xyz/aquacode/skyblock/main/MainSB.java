@@ -3,7 +3,9 @@ package xyz.aquacode.skyblock.main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import xyz.aquacode.skyblock.ChatSystem.ChatMessages;
 import xyz.aquacode.skyblock.IslandManamger.IslandLoader;
+import xyz.aquacode.skyblock.Util.VaultUtils;
 import xyz.aquacode.skyblock.data.IslandData;
 import xyz.aquacode.skyblock.data.PlayerData;
 import xyz.aquacode.skyblock.data.PlayerLoader;
@@ -29,7 +31,17 @@ public class MainSB extends JavaPlugin
         IslandLoader.LoadIslandFromDataBase();
 
         Bukkit.getPluginManager().registerEvents(new PlayerLoader(), this);
+
+        //Vault
+        VaultUtils.enableVault();
+        //
+        //ChatSystem
+        new ChatMessages(this);
+        instance = this;
+
     }
+
+    public static MainSB instance;
 
     @Override
     public void onDisable()
@@ -47,4 +59,5 @@ public class MainSB extends JavaPlugin
         user.sendMessage(msg);
     }
 }
+
 
