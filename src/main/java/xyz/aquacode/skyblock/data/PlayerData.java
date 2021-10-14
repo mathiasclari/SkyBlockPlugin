@@ -11,6 +11,7 @@ public class PlayerData
 {
     private UUID IslandUUID;
     private String lastRequest;
+    private double playerScore;
 
     public PlayerData()
     {}
@@ -25,6 +26,12 @@ public class PlayerData
         return lastRequest;
     }
 
+    public double getPlayerScore()
+    {
+        return playerScore;
+    }
+
+
     public void setIsland(UUID uuid)
     {
         this.IslandUUID = uuid;
@@ -35,6 +42,15 @@ public class PlayerData
         this.lastRequest = request;
     }
 
+    public void setPlayerScore(double score)
+    {
+        this.playerScore = score;
+    }
+
+    public void addPlayerScore(double score)
+    {
+        this.playerScore = playerScore+score;
+    }
 
     public void getData(UUID uuid)
     {
@@ -43,10 +59,12 @@ public class PlayerData
             ResultSet result = ps.executeQuery("");
             if(result.next()) {
                 this.IslandUUID = UUID.fromString(result.getString(""));
+                this.playerScore = result.getDouble("");
                 this.lastRequest = null;
             } else {
                 this.IslandUUID = null;
                 this.lastRequest = null;
+                this.playerScore = 0;
             }
         }
 

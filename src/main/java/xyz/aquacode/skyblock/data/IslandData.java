@@ -12,15 +12,17 @@ public class IslandData
     private UUID islandUUID;
     private String worldName;
     private UUID islandAdmin;
+    private double islandScore;
     private List<UUID> islandMembers = new ArrayList<>();
     private int islandSize;
 
     // Island Save Data
-    public IslandData(UUID isUUID, String isWorld, UUID admin, List<UUID> isMembers, int isSize)
+    public IslandData(UUID isUUID, String isWorld, UUID admin, double score,List<UUID> isMembers, int isSize)
     {
         this.islandUUID = isUUID;
         this.worldName = isWorld;
         this.islandAdmin = admin;
+        this.islandScore = score;
         this.islandMembers = isMembers;
         this.islandSize = isSize;
     }
@@ -51,6 +53,11 @@ public class IslandData
         return islandSize;
     }
 
+    public double getIslandScore()
+    {
+        return islandScore;
+    }
+
     // Set Island Data
     public void setIslandWorld(String wn)
     {
@@ -75,5 +82,15 @@ public class IslandData
     public void addIslandMember(UUID userUUID)
     {
         this.islandMembers.add(userUUID);
+    }
+
+    public void setIslandScore(double score)
+    {
+        this.islandScore = score;
+    }
+
+    public void addIslandScore(double score)
+    {
+        this.islandScore = islandScore+score;
     }
 }
