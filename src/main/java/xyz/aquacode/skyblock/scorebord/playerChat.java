@@ -25,7 +25,7 @@ public class playerChat implements Listener
         }
         else
         {
-            MainSB.PlayerMessager(event.getPlayer(), "Your message was stopped.");
+            MainSB.PlayerMessager(event.getPlayer(), "Your message was blocked.");
         }
     }
 }
