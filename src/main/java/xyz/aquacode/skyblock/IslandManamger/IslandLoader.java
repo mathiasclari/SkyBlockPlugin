@@ -27,6 +27,7 @@ public class IslandLoader
                 String adminUUID = result.getString("");
                 List<UUID> IslandMembers = new ArrayList<>();
                 int IslandSize = result.getInt("");
+                double islandScore = (double) result.getInt("");
 
                 ResultSet result2 = ps.executeQuery("");
                 while (result2.next())
@@ -34,7 +35,7 @@ public class IslandLoader
                     IslandMembers.add(UUID.fromString(result2.getString("")));
                 }
 
-                MainSB.IslandSaves.put(UUID.fromString(IslandUUID), new IslandData(UUID.fromString(IslandUUID) ,IslandWorld, UUID.fromString(adminUUID), IslandMembers, IslandSize));
+                MainSB.IslandSaves.put(UUID.fromString(IslandUUID), new IslandData(UUID.fromString(IslandUUID), IslandWorld, UUID.fromString(adminUUID), islandScore, IslandMembers, IslandSize));
                 MainSB.ConsoleLog("Done {"+IslandUUID+"}");
             }
         }
