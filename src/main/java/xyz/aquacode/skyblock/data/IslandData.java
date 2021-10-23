@@ -1,7 +1,11 @@
 package xyz.aquacode.skyblock.data;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import xyz.aquacode.skyblock.main.MainSB;
 
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -92,5 +96,29 @@ public class IslandData
     public void addIslandScore(double score)
     {
         this.islandScore = islandScore+score;
+    }
+
+    public void saveToDataBase()
+    {
+        UUID isID = this.islandUUID;
+        String WorldName = this.worldName;
+        UUID admin = islandAdmin;
+        double score = this.islandScore;
+        int size = this.islandSize;
+
+        Thread thread = new Thread(this.islandUUID.toString()) {
+            public void run(){
+                try
+                {
+                    Statement ps = MainSB.dataBase.GetConnection().createStatement();
+                    ps.executeUpdate("INSERT INTO `islandData` (`islandUUID`, `islandWorldName`, `islandAdminUUID`, `islandScore`,`islandSize`) VALUES ('"+isID.toString()+"', '"+WorldName+"', '"+admin.toString()+"', "+score+", "+size+");");
+                    ps.close();
+                }
+                catch (SQLException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        };
     }
 }
